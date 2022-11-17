@@ -63,7 +63,7 @@ var questions = [
 ]
 console.log(questions);
 
-
+//starts the games functions and hides certain HTML elements, shows others.
 function startGame(){
     console.log("inside startGame");
     console.log(questionsContainer)
@@ -72,7 +72,7 @@ function startGame(){
     startTimer();
     showQuestion();
 }
-
+//sets timer for the game
 function startTimer(){
     console.log("inside startTimer");
 
@@ -88,7 +88,7 @@ function startTimer(){
 }
 
 var questionCount= 0
-
+//shows the questions 
 function showQuestion(){
     console.log("inside showQuestions");
     console.log(questions[questionCount]) ;
@@ -103,7 +103,7 @@ function showQuestion(){
 
         
 }
-
+//checks if answer is right or wrong 
 function questionRightOrWrong (choosenQuestion){
     console.log(choosenQuestion ,  questions[questionCount].answer)
     if (choosenQuestion.textContent === questions[questionCount].answer){
@@ -125,7 +125,7 @@ function questionRightOrWrong (choosenQuestion){
      }}
 
 }
-
+//ends game, sends user to highscore page with highscore
 function endGame(){
     console.log("inside endGame");
     var prompt = window.prompt("Please enter your initials");
@@ -158,8 +158,3 @@ highscoreButton.addEventListener("click", function(){
 });
 
 
-//keep track of correct answers
-//remove time from clock when wrong answer is selected
-  
-// need to add event listener for answer buttons
-//CorrectAnswers
