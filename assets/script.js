@@ -41,23 +41,23 @@ var questions = [
     , c: "local storage" , d: "HTML",},
     answer: "local storage"
 },{
-    title:"question 5: ",
-    choices: {a: "" ,
-    b: ""
-    , c: "" , d: "",},
-    answer: ""
+    title:"question 5: Inorder to prevent a function bubbling through the DOM you can ___.",
+    choices: {a: "cry about it" ,
+    b: "preventDefaults()"
+    , c: "create an eventListener()" , d: "setInterval()",},
+    answer: "preventDefaults()"
 },{
-    title:"question 6: ",
-    choices: {a: "" ,
-    b: ""
-    , c: "" , d: "",},
-    answer: ""
+    title:"question 6: setInterval() is a ____.",
+    choices: {a: "timer" ,
+    b: "option to prevent defaults"
+    , c: "slideshow" , d: "all of the above",},
+    answer: "timer"
 },{
-    title:"question 7: ",
-    choices: {a: "" ,
-    b: ""
-    , c: "" , d: "",},
-    answer: ""
+    title:"question 7: Appending is used when ___.",
+    choices: {a: "trying to erase something" ,
+    b: "the browswer isn't responding"
+    , c: "getting local storage" , d: "making element a parent or child",},
+    answer: "making element a parent or child"
 }
 
 ]

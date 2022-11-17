@@ -3,7 +3,7 @@
 
 
 Link
-website:  github: https://github.com/jajohnson0201/Challenge-04
+website: https://jajohnson0201.github.io/Coding-Quiz-04/ github: https://github.com/jajohnson0201/Coding-Quiz-04
 
 # Description
 The goal with this project was to start with nothing and create a game, for proof of knowing how to do it and have a tool for actually studying coding! had to start with barebones HTML,CSS,Javascript files and create a funtional game with tools we learned in class!
