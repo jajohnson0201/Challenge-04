@@ -1,45 +1,51 @@
 var timer = document.getElementById('counter');
 var startButton = document.getElementById('start-button');
-var q1 = document.querySelector('#question-1');
-var q2 = document.querySelector('#question-2');
-var q3 = document.querySelector('#question-3');
-var q4 = document.querySelector('#question-4');
-var questionsContainer = document.querySelector("question-cards");
-var CorrectAnswers = document.querySelector("right-ans");
-
+var highscoreButton = document.getElementById('hs-button');
+var questionCard = document.querySelector("#question-1");
+var qheader = document.querySelector('#question-header');
+var optA = document.querySelector('#opt-a');
+var optB = document.querySelector('#opt-b');
+var optC = document.querySelector('#opt-c');
+var optD = document.querySelector('#opt-d');
+var questionsContainer = document.querySelector(".question-card");
+var headerSection = document.querySelector('#header-section')
+var timerInterval;
 console.log(timer);
 console.log(startButton);
 
-var questionsList = [q1,q2,q3,q4];
-console.log(questions);
 
- secondsLeft = 90;
+
+secondsLeft = 90;
 
 var questions = [
     {title:"question 1: Data Attributes can be ___.",
     choices: { a: "data-hidden" , b: "data-shown" , c: "data-true" ,d: "anything you choose to make them."},
-    answer: "d: anything you choose to make them."
+    answer: "anything you choose to make them."
 },{
     title:"question 2: Preventing Defaults helps with ___.",
     choices: {a: "Not letting average people use the function." ,
     b: "Stopping the function from bubbling up through the parent elements."
-     , c: "Setting Timer Intervals." , d: "Traversing the DOM.",},
-    answer: "b:"
+    , c: "Setting Timer Intervals." , d: "Traversing the DOM.",},
+    answer: "Stopping the function from bubbling up through the parent elements."
 },
 
-
 ]
+console.log(questions);
+
 
 function startGame(){
     console.log("inside startGame");
+    console.log(questionsContainer)
+    questionsContainer.classList.remove('hide');
+    headerSection.classList.add('hide');
     startTimer();
-    showQuestions();
+    showQuestion();
 }
 
 function startTimer(){
     console.log("inside startTimer");
 
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         secondsLeft--;
         timer.textContent = secondsLeft
     if(secondsLeft === 0) {
@@ -50,25 +56,51 @@ function startTimer(){
     }, 1000);
 }
 
-function showQuestions(){
-    console.log("inside showQuestions");
-    score = 0;
-    for(var i=0; i < questions.length; i++){
-        var responce  ;
-        console.log(questions[0]);
-        console.log(questions[1]);
-        if (responce == questions[i].answer) {
-            score++;
+var questionCount= 0
 
-        } else{
-            secondsLeft-10
+function showQuestion(){
+    console.log("inside showQuestions");
+    console.log(questions[questionCount]) ;
+    console.log(questions.length);
+        
+            qheader.textContent= questions[questionCount].title;
+            optA.textContent= questions[questionCount].choices.a;
+            optB.textContent= questions[questionCount].choices.b;
+            optC.textContent= questions[questionCount].choices.c;
+            optD.textContent= questions[questionCount].choices.d;
+        console.log(questions[questionCount].choices.a);
+
+        
+}
+
+function questionRightOrWrong (choosenQuestion){
+    console.log(choosenQuestion ,  questions[questionCount].answer)
+    if (choosenQuestion.textContent === questions[questionCount].answer){
+        questionCount++;
+        if(questionCount===questions.length){
+            endGame();
+            clearInterval(timerInterval);
         }
-    }
+        else{
+
+        showQuestion();
+        }
+    } else  {
+        if (choosenQuestion.textContent !== questions[questionCount].answer){
+        secondsLeft-10;
+        
+        console.log(secondsLeft)
+        console.log('False')
+     }}
 
 }
 
 function endGame(){
     console.log("inside endGame");
+    // Grab the score from the secondsList var
+    // We want ot store it into local Storage with the user's initials
+    //Once the user clicks submit to submit score, then it can render a highscore page
+    window.location.href='highscore.html'
 }
 
 // need to add event listener for the button to start the game
@@ -80,6 +112,17 @@ startButton.addEventListener("click", function(event) {
     startGame();
     
   });
+
+//event listener for the answer picked.
+questionCard.addEventListener("click", function(event){
+    var choosenQuestion = event.target
+    questionRightOrWrong(choosenQuestion);
+});
+
+//event listener for the highscore button
+highscoreButton.addEventListener("click", function(){
+    window.location.href='highscore.html'
+});
 
 
 //keep track of correct answers

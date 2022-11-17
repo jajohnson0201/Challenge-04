@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz Challenge</title>
-    <link href="./assets/style.css"></link>
+    <link rel="stylesheet" href="./assets/style.css"></link>
 </head>
 <body>
     <section id="highscore-time">
@@ -13,9 +13,7 @@
         <h1 id="counter">90</h1>
     </section>
 
-    <section style="display:none" id="highscore-panel">
-        <h1>Highscores!</h1>
-    </section>
+    
 
     <section id="header-section">
         <h1 id="intro-header">This is a Coding Quiz</h1>
@@ -28,69 +26,23 @@
         
 
     <!--questions below-->
-    <section class="question-cards">
-        <div data-state="hidden" data-state="shown" 
-        data-1a="a: data-hidden" data-1b="b: data-shown" 
-        data-1c="c: data-true" data-1d="d: anything you choose to make them."
-        data-q1="question 1: Data Attributes can be ___." id="question-1">
-            <h1>question 1: Data Attributes can be ___.</h1>
-                <button>
-                    a: data-hidden
+    <section class="question-card hide">
+        <div id="question-1">
+            <h1 id = "question-header"></h1>
+                <button id="opt-a">
+                    
                 </button>
-                <button>
-                    b: data-shown
+                <button id="opt-b">
+                    
                 </button>
-                <button>
-                    c: data-true
+                <button id="opt-c">
+                    
                 </button>
-                <button class="right-ans">
-                    d: anything you choose to make them.
+                <button id="opt-d">
+                    
                 </button>
-        </div>
-        <div style="display:none" id="question-2">
-            <h1>question 2: Preventing Defaults helps with ___.</h1>
-                <button>
-                    a: Not letting average people use the function.
-                </button>
-                <button class="right-ans">
-                    b: Stopping the function from bubbling up through the parent elements.
-                </button>
-                <button>
-                    c: Setting Timer Intervals.
-                </button>
-                <button>
-                    d: Traversing the DOM.
-                </button>
-        </div>
-        <div style="display:none" id="question-3">
-            <h1>question</h1>
-                <button>
-                    a:
-                </button>
-                <button>
-                    b:
-                </button>
-                <button>
-                    c:
-                </button>
-                <button>
-                    d:
-                </button>
-        </div>
-        <div style="display:none" id="question-4">
-            <h1>question</h1>
-                <button>
-                    a:
-                </button>
-                <button>
-                    b:
-                </button>
-                <button>
-                    c:
-                </button>
-                <button>
-                    d:
-                </button>
+        
+        
         </div>
         
 
