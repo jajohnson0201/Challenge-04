@@ -19,7 +19,7 @@ body{
    padding-top: 5%;
 }
 #header-section{
-    display:flex;
+    
     flex-direction: column;
     align-items: center;
     margin:5%;
