@@ -1,4 +1,5 @@
 var timer = document.getElementById('counter');
+
 var startButton = document.getElementById('start-button');
 var highscoreButton = document.getElementById('hs-button');
 var questionCard = document.querySelector("#question-1");
@@ -87,7 +88,7 @@ function questionRightOrWrong (choosenQuestion){
         }
     } else  {
         if (choosenQuestion.textContent !== questions[questionCount].answer){
-        secondsLeft-10;
+        secondsLeft -= 10;
         
         console.log(secondsLeft)
         console.log('False')
@@ -97,9 +98,11 @@ function questionRightOrWrong (choosenQuestion){
 
 function endGame(){
     console.log("inside endGame");
-    // Grab the score from the secondsList var
-    // We want ot store it into local Storage with the user's initials
-    //Once the user clicks submit to submit score, then it can render a highscore page
+    var prompt = window.prompt("Please enter your initials");
+    var score = secondsLeft;
+    var ScoreArray = [prompt,score];
+    localStorage.setItem("score", JSON.stringify(ScoreArray));
+    
     window.location.href='highscore.html'
 }
 
