@@ -28,7 +28,37 @@ var questions = [
     b: "Stopping the function from bubbling up through the parent elements."
     , c: "Setting Timer Intervals." , d: "Traversing the DOM.",},
     answer: "Stopping the function from bubbling up through the parent elements."
-},
+},{
+    title:"question 3: When using JSON.parse with an array what does that do?",
+    choices: {a: "unzips locally stored array" ,
+    b: "zips array into local storage"
+    , c: "stringifies an array" , d: "all of the above",},
+    answer: "zips array into local storage"
+},{
+    title:"question 4: When using JSON.stringify to open arrays where does this take place",
+    choices: {a: "the DOM" ,
+    b: "the Window"
+    , c: "local storage" , d: "HTML",},
+    answer: "local storage"
+},{
+    title:"question 5: ",
+    choices: {a: "" ,
+    b: ""
+    , c: "" , d: "",},
+    answer: ""
+},{
+    title:"question 6: ",
+    choices: {a: "" ,
+    b: ""
+    , c: "" , d: "",},
+    answer: ""
+},{
+    title:"question 7: ",
+    choices: {a: "" ,
+    b: ""
+    , c: "" , d: "",},
+    answer: ""
+}
 
 ]
 console.log(questions);
