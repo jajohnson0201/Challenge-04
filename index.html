@@ -9,16 +9,16 @@
 </head>
 <body>
     <section id="highscore-time">
-        <button>View Highscores</button>
-        <h1>Timer: 60</h1>
+        <button id="hs-button">View Highscores</button>
+        <h1 id="counter">90</h1>
     </section>
 
-    <section id="highscore-panel">
+    <section style="display:none" id="highscore-panel">
         <h1>Highscores!</h1>
     </section>
 
     <section id="header-section">
-        <header id="intro-header">This is a Coding Quiz</header>
+        <h1 id="intro-header">This is a Coding Quiz</h1>
         <p id="intro-p"> It is a multiple choice assessment 
             with a time limit that ends the game if you dont 
             answer all of the questions. You can also keep 
@@ -26,10 +26,43 @@
             <button id="start-button">START</button>
         </section>
         
-<main>
+
     <!--questions below-->
     <section class="question-cards">
-        <div id="question-1">
+        <div data-state="hidden" data-state="shown" 
+        data-1a="a: data-hidden" data-1b="b: data-shown" 
+        data-1c="c: data-true" data-1d="d: anything you choose to make them."
+        data-q1="question 1: Data Attributes can be ___." id="question-1">
+            <h1>question 1: Data Attributes can be ___.</h1>
+                <button>
+                    a: data-hidden
+                </button>
+                <button>
+                    b: data-shown
+                </button>
+                <button>
+                    c: data-true
+                </button>
+                <button class="right-ans">
+                    d: anything you choose to make them.
+                </button>
+        </div>
+        <div style="display:none" id="question-2">
+            <h1>question 2: Preventing Defaults helps with ___.</h1>
+                <button>
+                    a: Not letting average people use the function.
+                </button>
+                <button class="right-ans">
+                    b: Stopping the function from bubbling up through the parent elements.
+                </button>
+                <button>
+                    c: Setting Timer Intervals.
+                </button>
+                <button>
+                    d: Traversing the DOM.
+                </button>
+        </div>
+        <div style="display:none" id="question-3">
             <h1>question</h1>
                 <button>
                     a:
@@ -44,37 +77,7 @@
                     d:
                 </button>
         </div>
-        <div id="question-2">
-            <h1>question</h1>
-                <button>
-                    a:
-                </button>
-                <button>
-                    b:
-                </button>
-                <button>
-                    c:
-                </button>
-                <button>
-                    d:
-                </button>
-        </div>
-        <div id="question-3">
-            <h1>question</h1>
-                <button>
-                    a:
-                </button>
-                <button>
-                    b:
-                </button>
-                <button>
-                    c:
-                </button>
-                <button>
-                    d:
-                </button>
-        </div>
-        <div id="question-4">
+        <div style="display:none" id="question-4">
             <h1>question</h1>
                 <button>
                     a:
@@ -93,7 +96,7 @@
 
 
     </section>
-</main>
-    <link href="./assets/script.js"></link>
+
+    <script src="./assets/script.js"></script>
 </body>
 </html>
