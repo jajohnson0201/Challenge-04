@@ -125,13 +125,19 @@ function questionRightOrWrong (choosenQuestion){
      }}
 
 }
+var storedScores = JSON.parse(localStorage.getItem("score")) || [];
+
 //ends game, sends user to highscore page with highscore
 function endGame(){
     console.log("inside endGame");
     var prompt = window.prompt("Please enter your initials");
     var score = secondsLeft;
-    var ScoreArray = [prompt,score];
-    localStorage.setItem("score", JSON.stringify(ScoreArray));
+    var scoreObj = {
+        name: prompt,
+        score: score,
+    }
+    storedScores.push(scoreObj)
+    localStorage.setItem("score", JSON.stringify(storedScores));
     
     window.location.href='highscore.html'
 }
